@@ -23,30 +23,40 @@ export default class Menu extends React.Component {
 
 				<S.Navbar>
 					<ul>
-						<S.LinkGroup>
-							<IoHome size={24} />
-							<Link to="/">Home</Link>
-						</S.LinkGroup>
+						<Link to="/">
+							<S.LinkGroup>
+								<IoHome size={24} />
+								<span>Home</span>
+							</S.LinkGroup>
+						</Link>
 
-						<S.LinkGroup>
-							<IoPerson size={24} />
-							<Link to="/characters">Characters</Link>
-						</S.LinkGroup>
+						<Link to="/characters">
+							<S.LinkGroup>
+								<IoPerson size={24} />
+								<span>Characters</span>
+							</S.LinkGroup>
+						</Link>
 
-						<S.LinkGroup>
-							<IoSearch size={24} />
-							<Link to="/search">Search</Link>
-						</S.LinkGroup>
+						<Link to="/search">
+							<S.LinkGroup>
+								<IoSearch size={24} />
+								<span>Search</span>
+							</S.LinkGroup>
+						</Link>
 
-						<S.LinkGroup>
-							<IoLocation size={24} />
-							<Link to="/location">Locations</Link>
-						</S.LinkGroup>
+						<Link to="/location">
+							<S.LinkGroup>
+								<IoLocation size={24} />
+								<span>Locations</span>
+							</S.LinkGroup>
+						</Link>
 
-						<S.LinkGroup>
-							<IoFilm size={24} />
-							<Link to="/episodes">Episodes</Link>
-						</S.LinkGroup>
+						<Link to="/episodes">
+							<S.LinkGroup>
+								<IoFilm size={24} />
+								<span>Episodes</span>
+							</S.LinkGroup>
+						</Link>
 					</ul>
 				</S.Navbar>
 

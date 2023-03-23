@@ -32,7 +32,7 @@ export const ButtonMenu = styled.button`
 		transform-origin: 1px;
 
 		&:first-child {
-			transform: ${({ open }) => (open ? "rotate(48deg)" : "rotate(0)")};
+			transform: ${({ open }) => (open ? "rotate(47deg)" : "rotate(0)")};
 		}
 
 		&:nth-child(2) {
@@ -41,7 +41,7 @@ export const ButtonMenu = styled.button`
 		}
 
 		:nth-child(3) {
-			transform: ${({ open }) => (open ? "rotate(-48deg)" : "rotate(0)")};
+			transform: ${({ open }) => (open ? "rotate(-47deg)" : "rotate(0)")};
 		}
 	}
 `;

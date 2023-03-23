@@ -1,5 +1,5 @@
 import React from "react";
-import * as S from "./burger.styled.jsx";
+import * as S from "./burger.styled";
 
 export default class Burger extends React.Component {
 	render() {

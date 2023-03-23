@@ -5,6 +5,7 @@ export const Header = styled.header`
 	display: ${({ open }) => (open ? "flex" : "none")};
 	flex-direction: column;
 	gap: 2rem;
+	z-index: 9;
 
 	@media (max-width: 750px) {
 		width: max-content;
@@ -21,16 +22,9 @@ export const Header = styled.header`
 				top: 0;
 				left: 0;
 
-				display: ${({ open }) => (open ? "flex" : "none")};
-				flex-direction: column;
-				justify-content: flex-start;
-				align-items: flex-start;
-				gap: 2rem;
-				
-				background-color: #1c1c1c;
+				background-color: #22262e;
 				transition: transform 0.3s ease-in-out;
 				transform: ${({ open }) => (open ? "translateX(0)" : "translateX(100%)")};
-				text-align: left;
 			`;
 		}
 	}}
@@ -74,10 +68,13 @@ export const Navbar = styled.nav`
 		align-items: center;
 		gap: 0.3rem;
 	}
+
+	a {
+		width: 100%;
+	}
 `;
 
 export const LinkGroup = styled.li`
-	width: 100%;
 	padding: 12px;
 
 	display: flex;
@@ -91,7 +88,7 @@ export const LinkGroup = styled.li`
 	@media (min-width: 480px) and (max-width: 750px) {
 		justify-content: center;
 
-		a {
+		span {
 			display: none;
 		}
 	}
@@ -102,7 +99,7 @@ export const LinkGroup = styled.li`
 		color: ${(props) => props.theme.colors.text};
 	}
 
-	a {
+	span {
 		font-weight: ${(props) => props.theme.fw.rg};
 		font-size: min(1rem, 4vw);
 		color: inherit;
