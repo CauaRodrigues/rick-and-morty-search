@@ -58,6 +58,7 @@ export const LinkGroup = styled.li`
 
 	a {
 		font-weight: ${(props) => props.theme.fw.rg};
+		font-size: min(1rem, 4vw);
 		color: inherit;
 	}
 `;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import * as S from "./character.styled";
+import * as S from "./cardCharacter.styled";
 
-export default class Character extends Component {
+export default class CardCharacter extends Component {
 	render() {
 		const { avatar, name, species, gender, origin, status } = this.props;
 

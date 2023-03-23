@@ -5,6 +5,7 @@ import Location from "./pages/Location";
 import Episodes from "./pages/Episodes";
 import Search from "./pages/Search";
 import Error from "./pages/Error";
+import Characters from "./pages/Characters";
 
 export const Router = createBrowserRouter([
 	{
@@ -12,6 +13,10 @@ export const Router = createBrowserRouter([
 		element: <Root />,
 		errorElement: <Error />,
 		children: [
+			{
+				path: "/characters",
+				element: <Characters />,
+			},
 			{
 				path: "/location",
 				element: <Location />,

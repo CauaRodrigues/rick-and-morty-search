@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Card = styled.li`
+export const Card = styled.div`
 	width: 250px;
 	padding: 1rem;
 
@@ -9,20 +9,19 @@ export const Card = styled.li`
 	justify-content: center;
 	align-items: center;
 
-	background-color: ${(props) => props.theme.colors.secondary};
+	background-color: ${(props) => props.theme.colors.primary};
 	border-radius: 23px;
-	box-shadow: 2px 2px 12px #000000;
 	color: ${(props) => props.theme.colors.text};
 	cursor: pointer;
 	transition: ease-in-out 0.4s;
 
 	&:hover {
-		box-shadow: 4px 4px 16px #000000;
 		transform: translate(-0.5rem, -0.5rem);
 	}
 
 	h2 {
 		text-align: center;
+		font-weight: ${(props) => props.theme.fw.md};
 	}
 
 	span {
@@ -30,7 +29,7 @@ export const Card = styled.li`
 		margin: 5px 0;
 		display: flex;
 		font-size: min(1rem, 5vw);
-		font-weight: 500;
+		font-weight: ${(props) => props.theme.fw.rg};
 		text-align: start;
 
 		img {

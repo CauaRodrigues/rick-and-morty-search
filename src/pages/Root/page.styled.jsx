@@ -10,7 +10,8 @@ export const Container = styled.main`
 
 	.content {
 		flex: 1;
-		height: 100vh;
+		min-height: 95vh;
+		padding: 24px 12px;
 		background: ${(props) => props.theme.colors.secondary};
 		border-radius: 32px;
 
