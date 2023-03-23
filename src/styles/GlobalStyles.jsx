@@ -10,7 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     border: 0;
-    font-family: 'Fira Code', monospace;
+    font-family: 'Open Sans', sans-serif;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
     text-decoration: none;

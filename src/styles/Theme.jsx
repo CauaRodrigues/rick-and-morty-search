@@ -4,12 +4,20 @@ import { ThemeProvider } from "styled-components";
 export default class Theme extends React.Component {
 	theme = {
 		colors: {
-			primary: "#101010",
-			secondary: "#303032",
+			primary: "#22262e",
+			secondary: "#2e3139",
 			text: "#ffffff",
 			gray: "#6d6d6d",
+			gray_dark: "#969696",
 			green: "#208d45",
 			red: "#ed1c24",
+			divider: "#525252",
+		},
+		fw: {
+			th: "300",
+			rg: "400",
+			md: "500",
+			bd: "600",
 		},
 	};
 

@@ -2,13 +2,17 @@ import styled from "styled-components";
 
 export const Container = styled.main`
 	width: 100%;
-	padding: 24px;
+	padding: 16px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 1rem;
 
 	.content {
-		width: 80%;
+		flex: 1;
+		height: 100vh;
+		background: ${(props) => props.theme.colors.secondary};
+		border-radius: 32px;
 
 		display: flex;
 		flex-wrap: wrap;
