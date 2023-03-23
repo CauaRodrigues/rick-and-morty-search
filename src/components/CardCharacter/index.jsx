@@ -12,31 +12,34 @@ export default class CardCharacter extends Component {
 					src={avatar}
 					alt={`avatar ${name}`}
 				/>
-				<h2>{name}</h2>
 
-				<span>
-					<img
-						src="https://cdn-icons-png.flaticon.com/512/9672/9672524.png"
-						alt="icon species"
-					/>
-					{species}
-				</span>
+				<div className="info">
+					<h2>{name}</h2>
 
-				<span>
-					<img
-						src="https://cdn-icons-png.flaticon.com/512/4322/4322991.png"
-						alt="icon gender"
-					/>
-					{gender}
-				</span>
+					<span>
+						<img
+							src="https://cdn-icons-png.flaticon.com/512/9672/9672524.png"
+							alt="icon species"
+						/>
+						{species}
+					</span>
 
-				<span>
-					<img
-						src="https://cdn-icons-png.flaticon.com/512/2776/2776067.png"
-						alt="icon location"
-					/>
-					{origin}
-				</span>
+					<span>
+						<img
+							src="https://cdn-icons-png.flaticon.com/512/4322/4322991.png"
+							alt="icon gender"
+						/>
+						{gender}
+					</span>
+
+					<span>
+						<img
+							src="https://cdn-icons-png.flaticon.com/512/2776/2776067.png"
+							alt="icon location"
+						/>
+						{origin}
+					</span>
+				</div>
 			</S.Card>
 		);
 	}

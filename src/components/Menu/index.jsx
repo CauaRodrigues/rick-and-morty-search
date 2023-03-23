@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 export default class Menu extends React.Component {
 	render() {
 		return (
-			<S.Header>
+			<S.Header open={this.props.open} mobile={this.props.mobile}>
 				<S.LogoGroup>
 					<img src="/assets/rick-and-morty.png" alt="Logo Pickles Search" />
 

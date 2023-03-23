@@ -8,6 +8,7 @@ export const Card = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	gap: 1rem;
 
 	background-color: ${(props) => props.theme.colors.primary};
 	border-radius: 23px;
@@ -17,27 +18,6 @@ export const Card = styled.div`
 
 	&:hover {
 		transform: translate(-0.5rem, -0.5rem);
-	}
-
-	h2 {
-		text-align: center;
-		font-weight: ${(props) => props.theme.fw.md};
-	}
-
-	span {
-		align-self: flex-start;
-		margin: 5px 0;
-		display: flex;
-		font-size: min(1rem, 5vw);
-		font-weight: ${(props) => props.theme.fw.rg};
-		text-align: start;
-
-		img {
-			margin-right: 5px;
-			border-radius: 0;
-			width: 20px;
-			height: 20px;
-		}
 	}
 
 	.avatar {
@@ -51,5 +31,47 @@ export const Card = styled.div`
 
 	.Dead {
 		border-color: ${(props) => props.theme.colors.red};
+	}
+
+	.info {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 0.1rem;
+
+		h2 {
+			text-align: center;
+			font-size: min(1.3rem, 5vw);
+			font-weight: ${(props) => props.theme.fw.md};
+		}
+
+		span {
+			align-self: flex-start;
+			margin: 5px 0;
+			display: flex;
+			font-size: min(1rem, 5vw);
+			font-weight: ${(props) => props.theme.fw.rg};
+			text-align: start;
+
+			img {
+				margin-right: 5px;
+				border-radius: 0;
+				width: 20px;
+				height: 20px;
+			}
+		}
+	}
+
+	@media (max-width: 670px) {
+		width: 100%;
+		flex-direction: row;
+
+		img.avatar {
+			min-width: 40%;
+		}
+
+		.info h2 {
+			text-align: left;
+		}
 	}
 `;
