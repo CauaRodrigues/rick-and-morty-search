@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from "react";
+import React, { Fragment } from "react";
 
 import Service from "../../services";
 import * as S from "../../styles/components/CardsContainer";
@@ -7,7 +7,7 @@ import Pagination from "../../components/Pagination";
 
 const srv = new Service();
 
-export default class Characters extends Component {
+export default class Locations extends React.Component {
 	state = {
 		currentPage: 1,
 		totalPages: 1,
@@ -48,6 +48,7 @@ export default class Characters extends Component {
 								<SimpleCard
 									title={location.name}
 									infos={[location.type, location.dimension]}
+									titleButton="residents"
 								/>
 							</Fragment>
 						))

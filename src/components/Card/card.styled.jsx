@@ -85,6 +85,10 @@ export const AvatarCard = styled(Card)`
 export const SimpleCard = styled(Card)`
 	justify-content: space-between;
 
+	.details span {
+		align-self: ${(props) => props.alignInfos};
+	}
+
 	button {
 		padding: 0.8em 1.5em;
 		margin: 0.3em 0;
@@ -94,6 +98,7 @@ export const SimpleCard = styled(Card)`
 		outline: none;
 
 		color: ${(props) => props.theme.colors.text};
+		text-transform: capitalize;
 		font-size: min(0.9rem, 3.8vw);
 		font-weight: ${(props) => props.theme.fw.bd};
 

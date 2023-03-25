@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Location from "./pages/Location";
+import Locations from "./pages/Locations";
 import Episodes from "./pages/Episodes";
 import Search from "./pages/Search";
 import Error from "./pages/Error";
@@ -24,7 +24,7 @@ export const Router = createBrowserRouter([
 			},
 			{
 				path: "/location",
-				element: <Location />,
+				element: <Locations />,
 			},
 			{
 				path: "/search",
