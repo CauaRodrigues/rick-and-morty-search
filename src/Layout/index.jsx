@@ -1,12 +1,12 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 
-import Menu from "../../components/Menu";
-import * as S from "./page.styled";
+import Menu from "../components/Menu";
+import * as S from "./layout.styled";
 import MediaQuery from "react-responsive";
-import Burger from "../../components/Burger";
+import Burger from "../components/Burger";
 
-export default class Root extends React.Component {
+export default class Layout extends React.Component {
 	state = {
 		open: false,
 	};

@@ -1,17 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
 
-import Root from "./pages/Root";
 import Location from "./pages/Location";
 import Episodes from "./pages/Episodes";
 import Search from "./pages/Search";
 import Error from "./pages/Error";
 import Characters from "./pages/Characters";
 import Home from "./pages/Home";
+import Layout from "./Layout";
 
 export const Router = createBrowserRouter([
 	{
 		path: "/",
-		element: <Root />,
+		element: <Layout />,
 		errorElement: <Error />,
 		children: [
 			{

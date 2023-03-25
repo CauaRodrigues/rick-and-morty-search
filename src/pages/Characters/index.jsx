@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from "react";
 
 import Service from "../../services";
-import CardCharacter from "../../components/CardCharacter";
-import * as S from "./page.styled";
+import * as S from "../../styles/components/CardsContainer";
+import CharacterCard from "../../components/Card/Character";
 import Pagination from "../../components/Pagination";
 
 const srv = new Service();
@@ -41,11 +41,11 @@ export default class Characters extends Component {
 			<>
 				<h1>Characters</h1>
 
-				<S.Cards>
+				<S.CardsContainer>
 					{charactersList ? (
 						charactersList.map((person) => (
 							<Fragment key={person.id}>
-								<CardCharacter
+								<CharacterCard
 									status={person.status}
 									name={person.name}
 									avatar={person.image}
@@ -56,9 +56,9 @@ export default class Characters extends Component {
 							</Fragment>
 						))
 					) : (
-						<h2>Error</h2>
+						<h2>Loading...</h2>
 					)}
-				</S.Cards>
+				</S.CardsContainer>
 
 				<Pagination
 					currentPage={currentPage}

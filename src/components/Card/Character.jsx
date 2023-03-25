@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import * as S from "./cardCharacter.styled";
+import * as S from "./card.styled";
 
-export default class CardCharacter extends Component {
+export default class CharacterCard extends Component {
 	render() {
 		const { avatar, name, species, gender, origin, status } = this.props;
 
 		return (
-			<S.Card>
+			<S.AvatarCard>
 				<img
 					className={`avatar ${status}`}
 					src={avatar}
 					alt={`avatar ${name}`}
 				/>
 
-				<div className="info">
+				<div className="details">
 					<h2>{name}</h2>
 
 					<span>
@@ -40,7 +40,7 @@ export default class CardCharacter extends Component {
 						{origin}
 					</span>
 				</div>
-			</S.Card>
+			</S.AvatarCard>
 		);
 	}
 }

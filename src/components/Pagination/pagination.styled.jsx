@@ -1,12 +1,16 @@
 import styled from "styled-components";
 
 export const BoxPagination = styled.div`
-	width: 30%;
+	min-width: 50%;
 	min-height: 10vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+
+	p {
+		margin: 12px 0;
+	}
 `;
 
 export const BoxButtons = styled.div`
@@ -25,7 +29,6 @@ export const Button = styled.button`
 	justify-content: center;
 
 	border-radius: 50%;
-
 	transition: all 0.4s;
 	cursor: pointer;
 
@@ -41,6 +44,7 @@ export const Button = styled.button`
 	}
 
 	&:disabled {
+		cursor: not-allowed;
 		opacity: 0.4;
 
 		&:hover {
