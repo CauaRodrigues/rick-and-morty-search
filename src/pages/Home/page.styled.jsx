@@ -13,3 +13,26 @@ export const Logo = styled.figure`
 		width: min(300px, 60vw);
 	}
 `;
+
+export const BoxLoading = styled.div`
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+`;
+
+export const Loading = styled.span`
+	border: 5px solid ${(props) => props.theme.colors.gray};
+	border-top-color: ${(props) => props.theme.colors.red};
+	border-radius: 50%;
+	width: 3em;
+	height: 3em;
+	animation: spin 1s linear infinite;
+
+	@keyframes spin {
+		to {
+			transform: rotate(360deg);
+		}
+	}
+`;

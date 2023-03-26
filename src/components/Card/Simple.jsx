@@ -14,7 +14,9 @@ export default class SimpleCard extends React.Component {
 					<span>{infos[1]}</span>
 				</div>
 
-				<button>{titleButton}</button>
+				<button title={`View all ${titleButton} in this ${title}`}>
+					{titleButton}
+				</button>
 			</S.SimpleCard>
 		);
 	}

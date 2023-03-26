@@ -21,9 +21,11 @@ export default class Service {
 	}
 
 	async listSome(IDs) {
-		const characters = await api.get(`/character/${IDs}`);
-		const locations = await api.get(`/location/${IDs}`);
-		const episodes = await api.get(`/episode/${IDs}`);
+		const { idsCharacters, idsLocations, idsEpisodes } = IDs;
+
+		const characters = await api.get(`/character/${idsCharacters}`);
+		const locations = await api.get(`/location/${idsLocations}`);
+		const episodes = await api.get(`/episode/${idsEpisodes}`);
 
 		return {
 			characters: characters.data,

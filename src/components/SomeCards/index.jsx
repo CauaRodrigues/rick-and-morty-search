@@ -15,11 +15,15 @@ export default class SomeCards extends React.Component {
 
 				<SG.CardsContainer>{children}</SG.CardsContainer>
 
-				<S.ButtonLink>
-					<Link to={`${pageLink}`}>View More</Link>
-
-					<IoIosArrowForward size={18} />
-				</S.ButtonLink>
+				<Link to={`${pageLink}`}>
+					<S.ButtonLink
+						onClick={() => window.scrollTo(0, 0)}
+						title={`View more ${title}`}
+					>
+						<span>View More</span>
+						<IoIosArrowForward size={18} />
+					</S.ButtonLink>
+				</Link>
 			</S.Container>
 		);
 	}

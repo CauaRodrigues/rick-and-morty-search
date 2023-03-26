@@ -39,7 +39,7 @@ export default class Locations extends React.Component {
 
 		return (
 			<>
-				<h1>Locations</h1>
+				<h1 id="top">Locations</h1>
 
 				<S.CardsContainer>
 					{listLocations ? (
