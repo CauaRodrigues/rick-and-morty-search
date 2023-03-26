@@ -15,7 +15,7 @@ const Card = styled.div`
 	border-radius: 23px;
 	color: ${(props) => props.theme.colors.text};
 
-	h2 {
+	h3 {
 		text-align: center;
 		font-size: min(1.3rem, 5vw);
 		font-weight: ${(props) => props.theme.fw.md};
@@ -107,7 +107,7 @@ export const SimpleCard = styled(Card)`
 		transition: all 0.3s;
 
 		&:hover {
-			background-color: #4074b8;
+			background-color: ${(props) => props.theme.colors.blue};
 			transform: translateY(2px);
 			transition-duration: 0.35s;
 		}

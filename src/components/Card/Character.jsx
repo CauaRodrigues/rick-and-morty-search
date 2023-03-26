@@ -14,7 +14,7 @@ export default class CharacterCard extends Component {
 				/>
 
 				<div className="details">
-					<h2>{name}</h2>
+					<h3>{name}</h3>
 
 					<span>
 						<img

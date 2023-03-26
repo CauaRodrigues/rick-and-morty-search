@@ -13,6 +13,8 @@ export default class Theme extends React.Component {
 			green: "#208d45",
 			red: "#ed1c24",
 			divider: "#525252",
+			blue: "#4074b8",
+			blue_dark: "#1c72e2",
 		},
 		fw: {
 			th: "300",

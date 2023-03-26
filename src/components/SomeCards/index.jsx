@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { IoIosArrowForward } from "react-icons/io";
 
 import * as SG from "../../styles/components/CardsContainer";
-import * as S from "./page.styled";
+import * as S from "./someCards.styled";
 
 export default class SomeCards extends React.Component {
 	render() {
@@ -14,7 +15,11 @@ export default class SomeCards extends React.Component {
 
 				<SG.CardsContainer>{children}</SG.CardsContainer>
 
-				<Link to={`/${pageLink}`}>View More</Link>
+				<S.ButtonLink>
+					<Link to={`${pageLink}`}>View More</Link>
+
+					<IoIosArrowForward size={18} />
+				</S.ButtonLink>
 			</S.Container>
 		);
 	}

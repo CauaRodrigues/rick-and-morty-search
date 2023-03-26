@@ -55,7 +55,7 @@ export default class Home extends React.Component {
 					))}
 				</SomeCards>
 
-				<SomeCards title="Locations" pageLink={"/locations"}>
+				<SomeCards title="Locations" pageLink={"/location"}>
 					{listLocations.map((location) => (
 						<Fragment key={location.id}>
 							<SimpleCard

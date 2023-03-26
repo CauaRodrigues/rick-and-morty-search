@@ -18,6 +18,7 @@ export const Container = styled.main`
 		padding: 24px 12px;
 		background: ${(props) => props.theme.colors.secondary};
 		border-radius: 32px;
+		z-index: 0;
 
 		display: flex;
 		flex-direction: column;

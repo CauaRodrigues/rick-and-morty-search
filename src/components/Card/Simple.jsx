@@ -7,7 +7,7 @@ export default class SimpleCard extends React.Component {
 
 		return (
 			<S.SimpleCard alignInfos={alignInfos}>
-				<h2>{title}</h2>
+				<h3>{title}</h3>
 
 				<div className="details">
 					<span>{infos[0]}</span>
