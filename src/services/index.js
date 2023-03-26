@@ -19,4 +19,16 @@ export default class Service {
 		const response = await api.get(`/episode?page=${pageNumber}`);
 		return response;
 	}
+
+	async listSome(IDs) {
+		const characters = await api.get(`/character/${IDs}`);
+		const locations = await api.get(`/location/${IDs}`);
+		const episodes = await api.get(`/episode/${IDs}`);
+
+		return {
+			characters: characters.data,
+			locations: locations.data,
+			episodes: episodes.data,
+		};
+	}
 }
