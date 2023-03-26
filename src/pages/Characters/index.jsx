@@ -46,6 +46,7 @@ export default class Characters extends React.Component {
 						charactersList.map((person) => (
 							<Fragment key={person.id}>
 								<CharacterCard
+									id={person.id}
 									status={person.status}
 									name={person.name}
 									avatar={person.image}

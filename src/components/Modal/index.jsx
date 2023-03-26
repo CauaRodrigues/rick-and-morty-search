@@ -50,7 +50,7 @@ export default class Modal extends React.Component {
 
 								<span className="status">Status: {character.status}</span>
 								<span>Specie: {character.species}</span>
-								<span>Type: {character.type}</span>
+								<span>Type: {character.type || "(?????)"}</span>
 								<span>Gender: {character.gender}</span>
 							</S.SpaceInfos>
 
