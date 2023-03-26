@@ -5,7 +5,7 @@ export const Header = styled.header`
 	display: ${({ open }) => (open ? "flex" : "none")};
 	flex-direction: column;
 	gap: 2rem;
-	z-index: 9;
+	z-index: 3;
 
 	@media (max-width: 750px) {
 		width: max-content;
@@ -52,12 +52,6 @@ export const LogoGroup = styled.figure`
 			display: none;
 		}
 	}
-`;
-
-export const Divider = styled.span`
-	width: 100%;
-	height: 1px;
-	background-color: ${(props) => props.theme.colors.divider};
 `;
 
 export const Navbar = styled.nav`

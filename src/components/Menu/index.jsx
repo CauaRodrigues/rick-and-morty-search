@@ -7,6 +7,8 @@ import {
 	IoHome,
 } from "react-icons/io5";
 import * as S from "./menu.styled";
+
+import * as SG from "../../styles/components/Divider";
 import { Link } from "react-router-dom";
 
 export default class Menu extends React.Component {
@@ -19,7 +21,7 @@ export default class Menu extends React.Component {
 					<figcaption>Pickles Search</figcaption>
 				</S.LogoGroup>
 
-				<S.Divider />
+				<SG.Divider />
 
 				<S.Navbar>
 					<ul>
@@ -60,7 +62,7 @@ export default class Menu extends React.Component {
 					</ul>
 				</S.Navbar>
 
-				<S.Divider />
+				<SG.Divider />
 			</S.Header>
 		);
 	}

@@ -33,4 +33,9 @@ export default class Service {
 			episodes: episodes.data,
 		};
 	}
+
+	async character(ID) {
+		const response = await api.get(`/character/${ID}`);
+		return response;
+	}
 }
