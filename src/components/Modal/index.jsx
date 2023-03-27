@@ -116,15 +116,13 @@ export default class Modal extends React.Component {
 
 							<S.SpaceInfos>
 								<h2>Seen in the episodes</h2>
-								<ul>
-									{episodes.map(({ name, episode, air_date, id }) => (
-										<Fragment key={id}>
-											<li>{name}</li>
-											<li>{episode}</li>
-											<li>Release: {air_date}</li>
-										</Fragment>
-									))}
-								</ul>
+								{episodes.map(({ name, episode, air_date, id }) => (
+									<ul className="box--episode" key={id}>
+										<li>Name: {name}</li>
+										<li>Episode: {episode}</li>
+										<li>Release: {air_date}</li>
+									</ul>
+								))}
 							</S.SpaceInfos>
 						</S.BoxModal>
 					</S.Wrapper>

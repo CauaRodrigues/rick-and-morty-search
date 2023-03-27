@@ -109,4 +109,18 @@ export const SpaceInfos = styled.div`
 			}
 		}
 	}
+
+	ul.box--episode {
+		width: 100%;
+		margin: 8px 0;
+		padding: 12px;
+
+		border: 2px solid ${(props) => props.theme.colors.gray};
+		border-radius: 12px;
+
+		li {
+			font-weight: ${(props) => props.theme.fw.rg};
+			font-size: 1rem;
+		}
+	}
 `;
