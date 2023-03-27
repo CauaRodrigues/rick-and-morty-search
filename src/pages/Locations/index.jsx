@@ -31,13 +31,15 @@ export default class Locations extends React.Component {
 
 	loadLocations = (page = 1) => {
 		(async () => {
-			await srv.listLocations(page, this.state.searchText).then(({ data }) => {
-				this.setState({
-					locations: data.results,
-					currentPage: page,
-					totalPages: data.info.pages,
+			await srv
+				.listData("location", page, this.state.searchText)
+				.then(({ data }) => {
+					this.setState({
+						locations: data.results,
+						currentPage: page,
+						totalPages: data.info.pages,
+					});
 				});
-			});
 		})();
 	};
 

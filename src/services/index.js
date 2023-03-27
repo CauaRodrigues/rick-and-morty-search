@@ -5,20 +5,10 @@ const api = axios.create({
 });
 
 export default class Service {
-	async listCharacters(pageNumber, name = "") {
+	async listData(endpoint, pageNumber, name = "") {
 		const response = await api.get(
-			`/character?page=${pageNumber}&name=${name}`
+			`/${endpoint}?page=${pageNumber}&name=${name}`
 		);
-		return response;
-	}
-
-	async listLocations(pageNumber, name = "") {
-		const response = await api.get(`/location?page=${pageNumber}&name=${name}`);
-		return response;
-	}
-
-	async listEpisodes(pageNumber, name = "") {
-		const response = await api.get(`/episode?page=${pageNumber}&name=${name}`);
 		return response;
 	}
 
@@ -54,12 +44,5 @@ export default class Service {
 			location: getLocation.data,
 			episode: listEpisodes,
 		};
-	}
-
-	async search(endpoint, text, pageNumber = 1) {
-		const response = await api.get(
-			`/${endpoint}/?page=${pageNumber}&name=${text}`
-		);
-		return response;
 	}
 }

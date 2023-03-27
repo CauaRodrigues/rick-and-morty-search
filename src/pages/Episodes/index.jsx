@@ -32,13 +32,15 @@ export default class Episodes extends React.Component {
 
 	loadEpisodes = (page = 1) => {
 		(async () => {
-			await srv.listEpisodes(page, this.state.searchText).then(({ data }) => {
-				this.setState({
-					episodes: data.results,
-					currentPage: page,
-					totalPages: data.info.pages,
+			await srv
+				.listData("episode", page, this.state.searchText)
+				.then(({ data }) => {
+					this.setState({
+						episodes: data.results,
+						currentPage: page,
+						totalPages: data.info.pages,
+					});
 				});
-			});
 		})();
 	};
 

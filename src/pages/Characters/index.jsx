@@ -32,13 +32,15 @@ export default class Characters extends React.Component {
 
 	loadCharacters = (page = 1) => {
 		(async () => {
-			await srv.listCharacters(page, this.state.searchText).then(({ data }) => {
-				this.setState({
-					characters: data.results,
-					currentPage: page,
-					totalPages: data.info.pages,
+			await srv
+				.listData("character", page, this.state.searchText)
+				.then(({ data }) => {
+					this.setState({
+						characters: data.results,
+						currentPage: page,
+						totalPages: data.info.pages,
+					});
 				});
-			});
 		})();
 	};
 
