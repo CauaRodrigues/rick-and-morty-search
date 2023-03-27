@@ -4,6 +4,7 @@ import Service from "../../services";
 import * as SG from "../../styles/Components";
 import SimpleCard from "../../components/Card/Simple";
 import Pagination from "../../components/Pagination";
+import Search from "../../components/Search";
 
 const srv = new Service();
 
@@ -22,9 +23,15 @@ export default class Locations extends React.Component {
 		this.loadLocations();
 	}
 
+	componentDidUpdate(prevProps, prevState) {
+		if (prevState.searchText !== this.state.searchText) {
+			this.loadLocations();
+		}
+	}
+
 	loadLocations = (page = 1) => {
 		(async () => {
-			await srv.listLocations(page).then(({ data }) => {
+			await srv.listLocations(page, this.state.searchText).then(({ data }) => {
 				this.setState({
 					locations: data.results,
 					currentPage: page,
@@ -34,27 +41,29 @@ export default class Locations extends React.Component {
 		})();
 	};
 
+	getSearchText = (text) => {
+		this.setState({
+			searchText: text,
+		});
+	};
+
 	render() {
 		const { locations: listLocations, currentPage, totalPages } = this.state;
 
 		return (
 			<>
-				<h1 id="top">Locations</h1>
+				<Search title="Locations" onSearch={this.getSearchText} />
 
 				<SG.CardsContainer>
-					{listLocations ? (
-						listLocations.map((location) => (
-							<Fragment key={location.id}>
-								<SimpleCard
-									title={location.name}
-									infos={[location.type, location.dimension]}
-									titleButton="residents"
-								/>
-							</Fragment>
-						))
-					) : (
-						<h2>Loading...</h2>
-					)}
+					{listLocations.map((location) => (
+						<Fragment key={location.id}>
+							<SimpleCard
+								title={location.name}
+								infos={[location.type, location.dimension]}
+								titleButton="residents"
+							/>
+						</Fragment>
+					))}
 				</SG.CardsContainer>
 
 				<Pagination
