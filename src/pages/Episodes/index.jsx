@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
 import Service from "../../services";
-import * as S from "../../styles/components/CardsContainer";
+import * as SG from "../../styles/Components";
 import SimpleCard from "../../components/Card/Simple";
 import Pagination from "../../components/Pagination";
 
@@ -41,7 +41,7 @@ export default class Episodes extends React.Component {
 			<>
 				<h1>Episodes</h1>
 
-				<S.CardsContainer>
+				<SG.CardsContainer>
 					{listEpisodes ? (
 						listEpisodes.map((item) => (
 							<Fragment key={item.id}>
@@ -56,7 +56,7 @@ export default class Episodes extends React.Component {
 					) : (
 						<h2>Loading...</h2>
 					)}
-				</S.CardsContainer>
+				</SG.CardsContainer>
 
 				<Pagination
 					currentPage={currentPage}

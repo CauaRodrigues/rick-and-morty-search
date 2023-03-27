@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
 
-import * as SG from "../../styles/components/CardsContainer";
+import * as SG from "../../styles/Components";
 import * as S from "./someCards.styled";
 
 export default class SomeCards extends React.Component {

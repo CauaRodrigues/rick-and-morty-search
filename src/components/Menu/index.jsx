@@ -8,7 +8,7 @@ import {
 } from "react-icons/io5";
 import * as S from "./menu.styled";
 
-import * as SG from "../../styles/components/Divider";
+import * as SG from "../../styles/Components";
 import { Link } from "react-router-dom";
 
 export default class Menu extends React.Component {
@@ -21,7 +21,7 @@ export default class Menu extends React.Component {
 					<figcaption>Pickles Search</figcaption>
 				</S.LogoGroup>
 
-				<SG.Divider />
+				<SG.Divider weight={0.4} />
 
 				<S.Navbar>
 					<ul>
@@ -62,7 +62,7 @@ export default class Menu extends React.Component {
 					</ul>
 				</S.Navbar>
 
-				<SG.Divider />
+				<SG.Divider weight={0.4} />
 			</S.Header>
 		);
 	}

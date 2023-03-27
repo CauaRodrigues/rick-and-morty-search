@@ -2,7 +2,7 @@ import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
 
 import * as S from "./modal.styled";
-import * as SG from "../../styles/components/Divider";
+import * as SG from "../../styles/Components";
 import Service from "../../services";
 import { Fragment } from "react";
 

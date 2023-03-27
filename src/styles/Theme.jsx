@@ -6,6 +6,7 @@ export default class Theme extends React.Component {
 		colors: {
 			primary: "#22262e",
 			secondary: "#2e3139",
+			dark: "#0F1115",
 			text: "#ffffff",
 			light: "#f0f0f0d5",
 			gray: "#6d6d6d",
