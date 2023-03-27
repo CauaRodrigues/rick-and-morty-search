@@ -12,13 +12,13 @@ export default class Service {
 		return response;
 	}
 
-	async listLocations(pageNumber) {
-		const response = await api.get(`/location?page=${pageNumber}`);
+	async listLocations(pageNumber, name = "") {
+		const response = await api.get(`/location?page=${pageNumber}&name=${name}`);
 		return response;
 	}
 
-	async listEpisodes(pageNumber) {
-		const response = await api.get(`/episode?page=${pageNumber}`);
+	async listEpisodes(pageNumber, name = "") {
+		const response = await api.get(`/episode?page=${pageNumber}&name=${name}`);
 		return response;
 	}
 
