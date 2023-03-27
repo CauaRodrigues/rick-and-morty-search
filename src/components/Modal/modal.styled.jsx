@@ -26,7 +26,7 @@ export const BoxModal = styled.div`
 
 	z-index: 7;
 	background-color: ${(props) => props.theme.colors.primary};
-	border-radius: 23px;
+	border-radius: 12px;
 	overflow-y: scroll;
 
 	display: flex;
@@ -34,8 +34,15 @@ export const BoxModal = styled.div`
 	align-items: center;
 	gap: 1rem;
 
-	&::-webkit-scrollbar {
-		display: none;
+	::-webkit-scrollbar-track {
+		background-color: ${(props) => props.theme.colors.secondary};
+	}
+	::-webkit-scrollbar {
+		width: 6px;
+	}
+	::-webkit-scrollbar-thumb {
+		background: ${(props) => props.theme.colors.gray};
+		border-radius: 1em;
 	}
 
 	@media (max-width: 750px) {
@@ -121,6 +128,11 @@ export const SpaceInfos = styled.div`
 		li {
 			font-weight: ${(props) => props.theme.fw.rg};
 			font-size: 1rem;
+
+			&:first-of-type {
+				font-weight: ${(props) => props.theme.fw.bd};
+				font-size: 1.1rem;
+			}
 		}
 	}
 `;

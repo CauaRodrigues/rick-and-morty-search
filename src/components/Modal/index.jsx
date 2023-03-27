@@ -115,10 +115,10 @@ export default class Modal extends React.Component {
 							<SG.Divider />
 
 							<S.SpaceInfos>
-								<h2>Seen in the episodes</h2>
+								<h2>Seen in the episodes ({episodes.length})</h2>
 								{episodes.map(({ name, episode, air_date, id }) => (
 									<ul className="box--episode" key={id}>
-										<li>Name: {name}</li>
+										<li>{name}</li>
 										<li>Episode: {episode}</li>
 										<li>Release: {air_date}</li>
 									</ul>
