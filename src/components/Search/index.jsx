@@ -13,7 +13,8 @@ export default class Search extends React.Component {
 
 	loadData = (text) => {
 		(async () => {
-			await srv.search(text).then(({ data }) => {
+			await srv.search("character", text).then(({ data }) => {
+				console.log(data);
 				this.setState({
 					list: data.results,
 				});

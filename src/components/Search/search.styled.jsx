@@ -15,7 +15,7 @@ export const SearchField = styled.div`
 
 	input,
 	button {
-		padding: 10px 12px;
+		padding: 12px;
 		color: ${(props) => props.theme.colors.text};
 
 		&:focus {

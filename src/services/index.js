@@ -56,9 +56,9 @@ export default class Service {
 		};
 	}
 
-	async searchCharacter(text, pageNumber = 1) {
+	async search(endpoint, text, pageNumber = 1) {
 		const response = await api.get(
-			`/character/?page=${pageNumber}&name=${text}`
+			`/${endpoint}/?page=${pageNumber}&name=${text}`
 		);
 		return response;
 	}
