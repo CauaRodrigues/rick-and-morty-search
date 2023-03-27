@@ -93,6 +93,10 @@ export const LinkGroup = styled.li`
 		color: ${(props) => props.theme.colors.text};
 	}
 
+	img {
+		width: 32px;
+	}
+
 	span {
 		font-weight: ${(props) => props.theme.fw.rg};
 		font-size: min(1rem, 4vw);

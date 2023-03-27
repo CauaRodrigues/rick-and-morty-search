@@ -56,6 +56,8 @@ export default class Locations extends React.Component {
 			<>
 				<Search title="Locations" onSearch={this.getSearchText} />
 
+				<SG.Divider />
+
 				<SG.CardsContainer>
 					{listLocations.map((location) => (
 						<Fragment key={location.id}>

@@ -57,6 +57,8 @@ export default class Characters extends React.Component {
 			<>
 				<Search title="Characters" onSearch={this.getSearchText} />
 
+				<SG.Divider />
+
 				<SG.CardsContainer>
 					{charactersList.map((person) => (
 						<Fragment key={person.id}>

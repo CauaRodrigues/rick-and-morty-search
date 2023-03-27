@@ -50,6 +50,17 @@ export default class Menu extends React.Component {
 				</S.Navbar>
 
 				<SG.Divider weight={0.4} />
+
+				<S.Navbar>
+					<ul>
+						<Link to="https://github.com/CauaRodrigues/rick-and-morty-search">
+							<S.LinkGroup>
+								<img src="/assets/icons/github.png" alt="github icon" />
+								<span>Repositório</span>
+							</S.LinkGroup>
+						</Link>
+					</ul>
+				</S.Navbar>
 			</S.Header>
 		);
 	}

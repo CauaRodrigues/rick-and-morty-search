@@ -57,6 +57,8 @@ export default class Episodes extends React.Component {
 			<>
 				<Search title="Episodes" onSearch={this.getSearchText} />
 
+				<SG.Divider />
+
 				<SG.CardsContainer>
 					{listEpisodes.map((item) => (
 						<Fragment key={item.id}>
