@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 
 import Locations from "./pages/Locations";
 import Episodes from "./pages/Episodes";
-import Search from "./pages/Search";
 import Error from "./pages/Error";
 import Characters from "./pages/Characters";
 import Home from "./pages/Home";
@@ -25,10 +24,6 @@ export const Router = createBrowserRouter([
 			{
 				path: "/location",
 				element: <Locations />,
-			},
-			{
-				path: "/search",
-				element: <Search />,
 			},
 			{
 				path: "/episodes",

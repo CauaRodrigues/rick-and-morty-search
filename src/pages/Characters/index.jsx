@@ -4,6 +4,7 @@ import Service from "../../services";
 import * as SG from "../../styles/Components";
 import CharacterCard from "../../components/Card/Character";
 import Pagination from "../../components/Pagination";
+import Search from "../../components/Search";
 
 const srv = new Service();
 
@@ -39,7 +40,7 @@ export default class Characters extends React.Component {
 
 		return (
 			<>
-				<h1>Characters</h1>
+				<Search title="Characters" />
 
 				<SG.CardsContainer>
 					{charactersList ? (

@@ -22,7 +22,7 @@ export const Container = styled.main`
 
 		display: flex;
 		flex-direction: column;
-		justify-content: space-between;
+		justify-content: flex-start;
 		align-items: center;
 		gap: 2rem;
 

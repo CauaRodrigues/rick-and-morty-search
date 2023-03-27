@@ -11,9 +11,10 @@ export const SearchHeader = styled.header`
 export const SearchField = styled.div`
 	width: 80%;
 	display: flex;
+	justify-content: center;
 
 	input,
-	select {
+	button {
 		padding: 10px 12px;
 		color: ${(props) => props.theme.colors.text};
 
@@ -37,10 +38,12 @@ export const SearchField = styled.div`
 		}
 	}
 
-	select {
+	button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
 		background-color: ${(props) => props.theme.colors.dark};
-		font-weight: ${(props) => props.theme.fw.bd};
-		font-size: 1rem;
 
 		border-top-right-radius: 8px;
 		border-bottom-right-radius: 8px;

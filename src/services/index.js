@@ -55,4 +55,11 @@ export default class Service {
 			episode: listEpisodes,
 		};
 	}
+
+	async searchCharacter(text, pageNumber = 1) {
+		const response = await api.get(
+			`/character/?page=${pageNumber}&name=${text}`
+		);
+		return response;
+	}
 }

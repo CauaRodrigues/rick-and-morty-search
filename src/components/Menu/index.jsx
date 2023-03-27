@@ -1,11 +1,5 @@
 import React from "react";
-import {
-	IoPerson,
-	IoSearch,
-	IoLocation,
-	IoFilm,
-	IoHome,
-} from "react-icons/io5";
+import { IoPerson, IoLocation, IoFilm, IoHome } from "react-icons/io5";
 import * as S from "./menu.styled";
 
 import * as SG from "../../styles/Components";
@@ -36,13 +30,6 @@ export default class Menu extends React.Component {
 							<S.LinkGroup>
 								<IoPerson size={24} />
 								<span>Characters</span>
-							</S.LinkGroup>
-						</Link>
-
-						<Link to="/search">
-							<S.LinkGroup>
-								<IoSearch size={24} />
-								<span>Search</span>
 							</S.LinkGroup>
 						</Link>
 
