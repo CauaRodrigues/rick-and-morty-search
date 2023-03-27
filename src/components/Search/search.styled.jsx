@@ -44,6 +44,7 @@ export const SearchField = styled.div`
 		justify-content: center;
 
 		background-color: ${(props) => props.theme.colors.dark};
+		cursor: pointer;
 
 		border-top-right-radius: 8px;
 		border-bottom-right-radius: 8px;

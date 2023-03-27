@@ -5,8 +5,10 @@ const api = axios.create({
 });
 
 export default class Service {
-	async listCharacters(pageNumber) {
-		const response = await api.get(`/character?page=${pageNumber}`);
+	async listCharacters(pageNumber, name = "") {
+		const response = await api.get(
+			`/character?page=${pageNumber}&name=${name}`
+		);
 		return response;
 	}
 
@@ -45,8 +47,6 @@ export default class Service {
 				return episode.data;
 			})
 		);
-
-		console.log("oi", listEpisodes);
 
 		return {
 			character: response.data,

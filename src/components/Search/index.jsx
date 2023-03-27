@@ -2,33 +2,14 @@ import React from "react";
 import { IoSearch } from "react-icons/io5";
 import * as S from "./search.styled";
 
-import Service from "../../services";
-
-const srv = new Service();
-
 export default class Search extends React.Component {
 	state = {
 		searchText: "",
 	};
 
-	loadData = (text) => {
-		(async () => {
-			await srv.search("character", text).then(({ data }) => {
-				console.log(data);
-				this.setState({
-					list: data.results,
-				});
-			});
-		})();
-	};
-
-	onSearch = () => {
-		this.loadData(this.state.searchText);
-	};
-
 	render() {
 		const { searchText } = this.state;
-		const { title } = this.props;
+		const { title, onSearch } = this.props;
 
 		return (
 			<>
@@ -37,13 +18,15 @@ export default class Search extends React.Component {
 
 					<S.SearchField>
 						<input
-							placeholder="ex: Vermigurber"
+							placeholder="ex: Rick"
 							type="search"
 							value={searchText}
-							onChange={(e) => this.setState({ searchText: e.target.value })}
+							onChange={(e) =>
+								this.setState({ searchText: e.target.value.trim() })
+							}
 						/>
 
-						<button onClick={this.onSearch}>
+						<button onClick={() => onSearch(searchText)}>
 							<IoSearch size={20} />
 						</button>
 					</S.SearchField>

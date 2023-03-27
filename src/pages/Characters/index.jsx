@@ -13,6 +13,7 @@ export default class Characters extends React.Component {
 		currentPage: 1,
 		totalPages: 1,
 		characters: [],
+		searchText: "",
 	};
 
 	handlerPageChange = (pageNumber) => {
@@ -23,9 +24,15 @@ export default class Characters extends React.Component {
 		this.loadCharacters();
 	}
 
+	componentDidUpdate(prevProps, prevState) {
+		if (prevState.searchText !== this.state.searchText) {
+			this.loadCharacters();
+		}
+	}
+
 	loadCharacters = (page = 1) => {
 		(async () => {
-			await srv.listCharacters(page).then(({ data }) => {
+			await srv.listCharacters(page, this.state.searchText).then(({ data }) => {
 				this.setState({
 					characters: data.results,
 					currentPage: page,
@@ -35,31 +42,33 @@ export default class Characters extends React.Component {
 		})();
 	};
 
+	getSearchText = (text) => {
+		this.setState({
+			searchText: text,
+		});
+	};
+
 	render() {
 		const { characters: charactersList, currentPage, totalPages } = this.state;
 
 		return (
 			<>
-				<Search title="Characters" />
+				<Search title="Characters" onSearch={this.getSearchText} />
 
 				<SG.CardsContainer>
-					{charactersList ? (
-						charactersList.map((person) => (
-							<Fragment key={person.id}>
-								<CharacterCard
-									id={person.id}
-									status={person.status}
-									name={person.name}
-									avatar={person.image}
-									gender={person.gender}
-									species={person.species}
-									origin={person.origin.name}
-								/>
-							</Fragment>
-						))
-					) : (
-						<h2>Loading...</h2>
-					)}
+					{charactersList.map((person) => (
+						<Fragment key={person.id}>
+							<CharacterCard
+								id={person.id}
+								status={person.status}
+								name={person.name}
+								avatar={person.image}
+								gender={person.gender}
+								species={person.species}
+								origin={person.origin.name}
+							/>
+						</Fragment>
+					))}
 				</SG.CardsContainer>
 
 				<Pagination
