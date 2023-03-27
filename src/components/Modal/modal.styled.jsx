@@ -43,7 +43,6 @@ export const BoxModal = styled.div`
 	}
 
 	@media (max-width: 480px) {
-		bottom: 12px;
 		width: 90%;
 	}
 
@@ -57,6 +56,10 @@ export const BoxModal = styled.div`
 	img {
 		border-radius: 50%;
 	}
+
+	h1 {
+		text-align: center;
+	}
 `;
 
 export const SpaceInfos = styled.div`
@@ -64,4 +67,46 @@ export const SpaceInfos = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-self: flex-start;
+
+	h2 {
+		font-weight: ${(props) => props.theme.fw.md};
+	}
+
+	li {
+		font-weight: ${(props) => props.theme.fw.th};
+		font-size: 1rem;
+		margin: 2px;
+
+		b {
+			font-weight: ${(props) => props.theme.fw.rg};
+		}
+
+		&.locationName {
+			font-weight: ${(props) => props.theme.fw.md};
+		}
+
+		span.status {
+			padding: 1.5px 6px;
+
+			background-color: #6d6d6d29;
+			border: 2px solid ${(props) => props.theme.colors.gray};
+			border-radius: 6px;
+
+			color: ${(props) => props.theme.colors.gray};
+			font-weight: ${(props) => props.theme.fw.md};
+			font-size: 0.9rem;
+
+			&.Alive {
+				border-color: ${(props) => props.theme.colors.green};
+				color: ${(props) => props.theme.colors.green};
+				background-color: #208d442b;
+			}
+
+			&.Dead {
+				border-color: ${(props) => props.theme.colors.red};
+				color: ${(props) => props.theme.colors.red};
+				background-color: #ed1c2328;
+			}
+		}
+	}
 `;

@@ -36,6 +36,23 @@ export default class Service {
 
 	async character(ID) {
 		const response = await api.get(`/character/${ID}`);
-		return response;
+		const getOrigin = await api.get(response.data.origin.url);
+		const getLocation = await api.get(response.data.location.url);
+		const getEpisodes = response.data.episode;
+		const listEpisodes = await Promise.all(
+			getEpisodes.map(async (url) => {
+				const episode = await api.get(url);
+				return episode.data;
+			})
+		);
+
+		console.log("oi", listEpisodes);
+
+		return {
+			character: response.data,
+			origin: getOrigin.data,
+			location: getLocation.data,
+			episode: listEpisodes,
+		};
 	}
 }

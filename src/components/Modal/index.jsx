@@ -4,19 +4,26 @@ import { AiOutlineClose } from "react-icons/ai";
 import * as S from "./modal.styled";
 import * as SG from "../../styles/components/Divider";
 import Service from "../../services";
+import { Fragment } from "react";
 
 const srv = new Service();
 
 export default class Modal extends React.Component {
 	state = {
 		character: {},
+		location: {},
+		origin: {},
+		episodes: [],
 	};
 
 	loadCharacter = () => {
 		(async () => {
-			await srv.character(this.props.characterId).then(({ data }) => {
+			await srv.character(this.props.characterId).then((data) => {
 				this.setState({
-					character: data,
+					character: data.character,
+					origin: data.origin,
+					location: data.location,
+					episodes: data.episode,
 				});
 			});
 		})();
@@ -30,7 +37,7 @@ export default class Modal extends React.Component {
 
 	render() {
 		const { open, close } = this.props;
-		const { character } = this.state;
+		const { character, origin, location, episodes } = this.state;
 
 		return (
 			<>
@@ -46,39 +53,78 @@ export default class Modal extends React.Component {
 							<h1>{character.name}</h1>
 
 							<S.SpaceInfos>
-								<h2>Informations</h2>
+								<h2>Information</h2>
 
-								<span className="status">Status: {character.status}</span>
-								<span>Specie: {character.species}</span>
-								<span>Type: {character.type || "(?????)"}</span>
-								<span>Gender: {character.gender}</span>
+								<ul>
+									<li>
+										<b>Status:</b>{" "}
+										<span className={`status ${character.status}`}>
+											{character.status}
+										</span>
+									</li>
+
+									<li>
+										<b>Specie:</b> {character.species}
+									</li>
+
+									<li>
+										<b>Type:</b> {character.type || "(?????)"}
+									</li>
+
+									<li>
+										<b>Gender:</b> {character.gender}
+									</li>
+								</ul>
 							</S.SpaceInfos>
 
 							<SG.Divider />
 
 							<S.SpaceInfos>
 								<h2>Origin</h2>
-								<span>Name: {character.origin.name}</span>
-								<span>Type: location.type</span>
-								<span>Dimension: location.dimenson</span>
+								<ul>
+									<li>
+										<b>Name:</b> {character.origin.name}
+									</li>
+									<li>
+										<b>Type:</b> {origin.type || "(?????)"}
+									</li>
+									<li>
+										<b>Dimension:</b> {origin.dimension || "(?????)"}
+									</li>
+								</ul>
 							</S.SpaceInfos>
 
 							<SG.Divider />
 
 							<S.SpaceInfos>
 								<h2>Last seen on</h2>
-								<span>{character.location.name}</span>
-								<span>Type: location.type</span>
-								<span>Dimension: location.dimenson</span>
+
+								<ul>
+									<li className="locationName">{character.location.name}</li>
+
+									<li>
+										<b>Type:</b> {location.type || "(?????)"}
+									</li>
+
+									<li>
+										<b>Dimension:</b> {location.dimension || "(?????)"}
+									</li>
+								</ul>
 							</S.SpaceInfos>
 
 							<SG.Divider />
 
 							<S.SpaceInfos>
 								<h2>Seen in the episodes</h2>
-								<span>episode.name</span>
-								<span>episode.episode</span>
-								<span>Release: episode.air_date</span>
+								<ul>
+									{episodes.map(({ name, episode, air_date, id }) => (
+										<Fragment key={id}>
+											<li>{name}</li>
+											<li>{episode}</li>
+											<li>Release: {air_date}</li>
+										</Fragment>
+									))}
+								</ul>
 							</S.SpaceInfos>
 						</S.BoxModal>
 					</S.Wrapper>

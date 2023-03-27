@@ -4,7 +4,7 @@ export const ButtonMenu = styled.button`
 	width: 2rem;
 	height: 2rem;
 
-	z-index: 10;
+	z-index: 5;
 	position: absolute;
 	top: 1.5rem;
 	left: 1.5rem;
