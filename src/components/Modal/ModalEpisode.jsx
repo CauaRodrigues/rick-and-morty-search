@@ -9,20 +9,16 @@ const srv = new Service();
 
 export default class ModalEpisodes extends React.Component {
 	state = {
-		character: {},
-		location: {},
-		origin: {},
-		episodes: [],
+		characters: [],
+		episode: {},
 	};
 
-	loadCharacter = () => {
+	loadEpisode = () => {
 		(async () => {
-			await srv.character(this.props.episodeId).then((data) => {
+			await srv.episode(this.props.episodeId).then((data) => {
 				this.setState({
-					character: data.character,
-					origin: data.origin,
-					location: data.location,
-					episodes: data.episode,
+					characters: data.characters,
+					episode: data.episode,
 				});
 			});
 		})();
@@ -30,48 +26,35 @@ export default class ModalEpisodes extends React.Component {
 
 	componentDidUpdate(prevProps) {
 		if (this.props.open !== prevProps.open) {
-			this.loadCharacter();
+			this.loadEpisode();
 		}
 	}
 
 	render() {
 		const { open, close } = this.props;
-		const { character, origin, location, episodes } = this.state;
+		const { episode, characters } = this.state;
 
 		return (
 			<>
-				{character.name && (
+				{episode.name && (
 					<S.Wrapper openModal={open}>
 						<S.BoxModal>
 							<button className="close" onClick={close}>
 								<AiOutlineClose size={24} />
 							</button>
 
-							<img src={character.image} alt={character.name} />
-
-							<h1>{character.name}</h1>
+							<h1>{episode.name}</h1>
 
 							<S.SpaceInfos>
 								<h2>Information</h2>
 
 								<ul>
 									<li>
-										<b>Status:</b>{" "}
-										<span className={`status ${character.status}`}>
-											{character.status}
-										</span>
+										<b>Release:</b> {episode.air_date}
 									</li>
 
 									<li>
-										<b>Specie:</b> {character.species}
-									</li>
-
-									<li>
-										<b>Type:</b> {character.type || "(?????)"}
-									</li>
-
-									<li>
-										<b>Gender:</b> {character.gender}
+										<b>Episode:</b> {episode.episode}
 									</li>
 								</ul>
 							</S.SpaceInfos>
@@ -79,49 +62,16 @@ export default class ModalEpisodes extends React.Component {
 							<SG.Divider />
 
 							<S.SpaceInfos>
-								<h2>Origin</h2>
-								<ul>
-									<li>
-										<b>Name:</b> {character.origin.name}
-									</li>
-									<li>
-										<b>Type:</b> {origin.type || "(?????)"}
-									</li>
-									<li>
-										<b>Dimension:</b> {origin.dimension || "(?????)"}
-									</li>
-								</ul>
-							</S.SpaceInfos>
-
-							<SG.Divider />
-
-							<S.SpaceInfos>
-								<h2>Last seen on</h2>
-
-								<ul>
-									<li className="locationName">{character.location.name}</li>
-
-									<li>
-										<b>Type:</b> {location.type || "(?????)"}
-									</li>
-
-									<li>
-										<b>Dimension:</b> {location.dimension || "(?????)"}
-									</li>
-								</ul>
-							</S.SpaceInfos>
-
-							<SG.Divider />
-
-							<S.SpaceInfos>
-								<h2>Seen in the episodes ({episodes.length})</h2>
-								{episodes.map(({ name, episode, air_date, id }) => (
-									<ul className="box--episode" key={id}>
-										<li>{name}</li>
-										<li>Episode: {episode}</li>
-										<li>Release: {air_date}</li>
-									</ul>
-								))}
+								<h2>See the participants ({characters.length})</h2>
+								{characters.map(
+									({ id, name, status, species, gender, image }) => (
+										<ul className="box" key={id}>
+											<li>{name}</li>
+											<li>Status: {status}</li>
+											<li>Species: {species}</li>
+										</ul>
+									)
+								)}
 							</S.SpaceInfos>
 						</S.BoxModal>
 					</S.Wrapper>

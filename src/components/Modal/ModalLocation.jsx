@@ -13,7 +13,7 @@ export default class ModalLocation extends React.Component {
 		residents: [],
 	};
 
-	loadCharacter = () => {
+	loadLocation = () => {
 		(async () => {
 			await srv.location(this.props.locationId).then((data) => {
 				this.setState({
@@ -26,7 +26,7 @@ export default class ModalLocation extends React.Component {
 
 	componentDidUpdate(prevProps) {
 		if (this.props.open !== prevProps.open) {
-			this.loadCharacter();
+			this.loadLocation();
 		}
 	}
 

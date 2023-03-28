@@ -61,4 +61,20 @@ export default class Service {
 			residents: listResidents,
 		};
 	}
+
+	async episode(ID) {
+		const response = await api.get(`/episode/${ID}`);
+		const getParticipants = response.data.characters;
+		const listParticipants = await Promise.all(
+			getParticipants.map(async (url) => {
+				const character = await api.get(url);
+				return character.data;
+			})
+		);
+
+		return {
+			episode: response.data,
+			characters: listParticipants,
+		};
+	}
 }
