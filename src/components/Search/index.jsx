@@ -22,8 +22,8 @@ export default class Search extends React.Component {
 							type="search"
 							value={searchText}
 							onChange={(e) => {
-								this.setState({ searchText: e.target.value.trim() });
-								onSearch(e.target.value.trim());
+								this.setState({ searchText: e.target.value });
+								onSearch(e.target.value);
 							}}
 						/>
 
