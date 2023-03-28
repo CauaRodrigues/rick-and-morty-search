@@ -47,7 +47,11 @@ export default class Modal extends React.Component {
 								<AiOutlineClose size={24} />
 							</button>
 
-							<img src={character.image} alt={character.name} />
+							<img
+								className="avatar"
+								src={character.image}
+								alt={character.name}
+							/>
 
 							<h1>{character.name}</h1>
 
@@ -119,8 +123,12 @@ export default class Modal extends React.Component {
 								{episodes.map(({ name, episode, air_date, id }) => (
 									<ul className="box" key={id}>
 										<li>{name}</li>
-										<li>Episode: {episode}</li>
-										<li>Release: {air_date}</li>
+										<li>
+											<strong>Episode:</strong> {episode}
+										</li>
+										<li>
+											<strong>Release:</strong> {air_date}
+										</li>
 									</ul>
 								))}
 							</S.SpaceInfos>

@@ -1,7 +1,6 @@
 import React from "react";
 import * as S from "./card.styled";
-import ModalEpisodes from "../Modal/ModalEpisode";
-import ModalLocation from "../Modal/ModalLocation";
+import ModalGeral from "../Modal/ModalGeral";
 
 export default class SimpleCard extends React.Component {
 	state = {
@@ -19,19 +18,13 @@ export default class SimpleCard extends React.Component {
 
 		return (
 			<>
-				{type === "episode" ? (
-					<ModalEpisodes
-						open={this.state.openModal}
-						close={this.handlerModal}
-						episodeId={id}
-					/>
-				) : (
-					<ModalLocation
-						open={this.state.openModal}
-						close={this.handlerModal}
-						locationId={id}
-					/>
-				)}
+				<ModalGeral
+					open={this.state.openModal}
+					close={this.handlerModal}
+					ID={id}
+					endpoint={type}
+				/>
+
 				<S.SimpleCard alignInfos={alignInfos}>
 					<h3>{title}</h3>
 

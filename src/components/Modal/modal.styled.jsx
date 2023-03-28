@@ -60,7 +60,7 @@ export const BoxModal = styled.div`
 		align-self: flex-end;
 	}
 
-	img {
+	img.avatar {
 		border-radius: 50%;
 	}
 
@@ -117,7 +117,7 @@ export const SpaceInfos = styled.div`
 		}
 	}
 
-	ul.box {
+	.box {
 		width: 100%;
 		margin: 8px 0;
 		padding: 12px;
@@ -125,14 +125,24 @@ export const SpaceInfos = styled.div`
 		border: 2px solid ${(props) => props.theme.colors.gray};
 		border-radius: 12px;
 
-		li {
-			font-weight: ${(props) => props.theme.fw.rg};
-			font-size: 1rem;
+		&.character {
+			display: flex;
+			gap: 1rem;
 
-			&:first-of-type {
-				font-weight: ${(props) => props.theme.fw.bd};
-				font-size: 1.1rem;
+			img {
+				width: 120px;
 			}
+
+			ul {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+			}
+		}
+
+		li:first-of-type {
+			font-weight: ${(props) => props.theme.fw.bd};
+			font-size: 1.1rem;
 		}
 	}
 `;

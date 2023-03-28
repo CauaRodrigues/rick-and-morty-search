@@ -46,35 +46,22 @@ export default class Service {
 		};
 	}
 
-	async location(ID) {
-		const response = await api.get(`/location/${ID}`);
-		const getResidents = response.data.residents;
-		const listResidents = await Promise.all(
-			getResidents.map(async (url) => {
-				const resident = await api.get(url);
-				return resident.data;
-			})
-		);
-
-		return {
-			location: response.data,
-			residents: listResidents,
-		};
-	}
-
-	async episode(ID) {
-		const response = await api.get(`/episode/${ID}`);
-		const getParticipants = response.data.characters;
-		const listParticipants = await Promise.all(
-			getParticipants.map(async (url) => {
+	async getEpisodeOrLocation(endpoint, ID) {
+		const response = await api.get(`/${endpoint}/${ID}`);
+		const getCharacters =
+			endpoint === "location"
+				? response.data.residents
+				: response.data.characters;
+		const listCharacters = await Promise.all(
+			getCharacters.map(async (url) => {
 				const character = await api.get(url);
 				return character.data;
 			})
 		);
 
 		return {
-			episode: response.data,
-			characters: listParticipants,
+			info: response.data,
+			characters: listCharacters,
 		};
 	}
 }
