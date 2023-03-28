@@ -84,7 +84,7 @@ export const SpaceInfos = styled.div`
 		font-size: 1rem;
 		margin: 2px;
 
-		b {
+		strong {
 			font-weight: ${(props) => props.theme.fw.rg};
 		}
 

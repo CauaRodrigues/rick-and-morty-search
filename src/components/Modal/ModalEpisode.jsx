@@ -50,11 +50,11 @@ export default class ModalEpisodes extends React.Component {
 
 								<ul>
 									<li>
-										<b>Release:</b> {episode.air_date}
+										<strong>Release:</strong> {episode.air_date}
 									</li>
 
 									<li>
-										<b>Episode:</b> {episode.episode}
+										<strong>Episode:</strong> {episode.episode}
 									</li>
 								</ul>
 							</S.SpaceInfos>

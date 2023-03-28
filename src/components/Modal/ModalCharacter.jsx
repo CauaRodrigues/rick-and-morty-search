@@ -56,22 +56,22 @@ export default class Modal extends React.Component {
 
 								<ul>
 									<li>
-										<b>Status:</b>{" "}
+										<strong>Status:</strong>{" "}
 										<span className={`status ${character.status}`}>
 											{character.status}
 										</span>
 									</li>
 
 									<li>
-										<b>Specie:</b> {character.species}
+										<strong>Specie:</strong> {character.species}
 									</li>
 
 									<li>
-										<b>Type:</b> {character.type || "(?????)"}
+										<strong>Type:</strong> {character.type || "(?????)"}
 									</li>
 
 									<li>
-										<b>Gender:</b> {character.gender}
+										<strong>Gender:</strong> {character.gender}
 									</li>
 								</ul>
 							</S.SpaceInfos>
@@ -82,13 +82,13 @@ export default class Modal extends React.Component {
 								<h2>Origin</h2>
 								<ul>
 									<li>
-										<b>Name:</b> {character.origin.name}
+										<strong>Name:</strong> {character.origin.name}
 									</li>
 									<li>
-										<b>Type:</b> {origin.type || "(?????)"}
+										<strong>Type:</strong> {origin.type || "(?????)"}
 									</li>
 									<li>
-										<b>Dimension:</b> {origin.dimension || "(?????)"}
+										<strong>Dimension:</strong> {origin.dimension || "(?????)"}
 									</li>
 								</ul>
 							</S.SpaceInfos>
@@ -102,11 +102,12 @@ export default class Modal extends React.Component {
 									<li className="locationName">{character.location.name}</li>
 
 									<li>
-										<b>Type:</b> {location.type || "(?????)"}
+										<strong>Type:</strong> {location.type || "(?????)"}
 									</li>
 
 									<li>
-										<b>Dimension:</b> {location.dimension || "(?????)"}
+										<strong>Dimension:</strong>{" "}
+										{location.dimension || "(?????)"}
 									</li>
 								</ul>
 							</S.SpaceInfos>

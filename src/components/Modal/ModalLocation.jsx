@@ -50,11 +50,11 @@ export default class ModalLocation extends React.Component {
 
 								<ul>
 									<li>
-										<b>Type:</b> {location.type || "(?????)"}
+										<strong>Type:</strong> {location.type || "(?????)"}
 									</li>
 
 									<li>
-										<b>dimension:</b> {location.gender}
+										<strong>dimension:</strong> {location.dimension}
 									</li>
 								</ul>
 							</S.SpaceInfos>
