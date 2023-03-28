@@ -63,6 +63,8 @@ export default class Episodes extends React.Component {
 					{listEpisodes.map((item) => (
 						<Fragment key={item.id}>
 							<SimpleCard
+								id={item.id}
+								type="episode"
 								alignInfos="center"
 								title={item.name}
 								infos={[item.air_date, item.episode]}

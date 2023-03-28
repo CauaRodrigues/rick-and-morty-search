@@ -45,4 +45,20 @@ export default class Service {
 			episode: listEpisodes,
 		};
 	}
+
+	async location(ID) {
+		const response = await api.get(`/location/${ID}`);
+		const getResidents = response.data.residents;
+		const listResidents = await Promise.all(
+			getResidents.map(async (url) => {
+				const resident = await api.get(url);
+				return resident.data;
+			})
+		);
+
+		return {
+			location: response.data,
+			residents: listResidents,
+		};
+	}
 }

@@ -4,11 +4,10 @@ import { AiOutlineClose } from "react-icons/ai";
 import * as S from "./modal.styled";
 import * as SG from "../../styles/Components";
 import Service from "../../services";
-import { Fragment } from "react";
 
 const srv = new Service();
 
-export default class Modal extends React.Component {
+export default class ModalEpisodes extends React.Component {
 	state = {
 		character: {},
 		location: {},
@@ -18,7 +17,7 @@ export default class Modal extends React.Component {
 
 	loadCharacter = () => {
 		(async () => {
-			await srv.character(this.props.characterId).then((data) => {
+			await srv.character(this.props.episodeId).then((data) => {
 				this.setState({
 					character: data.character,
 					origin: data.origin,

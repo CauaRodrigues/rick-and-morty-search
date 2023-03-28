@@ -95,6 +95,7 @@ export default class Home extends React.Component {
 							{listLocations.map((location) => (
 								<Fragment key={location.id}>
 									<SimpleCard
+										type="location"
 										title={location.name}
 										infos={[location.type, location.dimension]}
 										titleButton="residents"
@@ -107,6 +108,7 @@ export default class Home extends React.Component {
 							{listEpisodes.map((item) => (
 								<Fragment key={item.id}>
 									<SimpleCard
+										type="episode"
 										alignInfos="center"
 										title={item.name}
 										infos={[item.air_date, item.episode]}

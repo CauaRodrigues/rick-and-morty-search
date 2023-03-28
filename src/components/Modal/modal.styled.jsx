@@ -117,7 +117,7 @@ export const SpaceInfos = styled.div`
 		}
 	}
 
-	ul.box--episode {
+	ul.box {
 		width: 100%;
 		margin: 8px 0;
 		padding: 12px;

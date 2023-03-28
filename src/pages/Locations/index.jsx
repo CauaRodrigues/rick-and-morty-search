@@ -62,6 +62,8 @@ export default class Locations extends React.Component {
 					{listLocations.map((location) => (
 						<Fragment key={location.id}>
 							<SimpleCard
+								id={location.id}
+								type="location"
 								title={location.name}
 								infos={[location.type, location.dimension]}
 								titleButton="residents"

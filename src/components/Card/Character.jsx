@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React from "react";
 import * as S from "./card.styled";
-import Modal from "../Modal";
+import Modal from "../Modal/ModalCharacter";
 
-export default class CharacterCard extends Component {
+export default class CharacterCard extends React.Component {
 	state = {
 		openModal: false,
 	};
